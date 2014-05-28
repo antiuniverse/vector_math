@@ -160,9 +160,9 @@ class Vector2 implements Vector {
     if (l == 0.0) {
       return 0.0;
     }
-    l = 1.0 / l;
-    storage[0] *= l;
-    storage[1] *= l;
+    double rcp = 1.0 / l;
+    storage[0] *= rcp;
+    storage[1] *= rcp;
     return l;
   }
 
