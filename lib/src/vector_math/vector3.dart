@@ -39,7 +39,7 @@ class Vector3 implements Vector{
     result.z = Math.max(a.z, b.z);
   }
 
-  // Interpolate between [min] and [max] with the amount of [a] using a linear 
+  // Interpolate between [min] and [max] with the amount of [a] using a linear
   // interpolation and set the values to [result].
   static void mix(Vector3 min, Vector3 max, double a, Vector3 result) {
     result.x = min.x + a * (max.x - min.x);
@@ -65,7 +65,7 @@ class Vector3 implements Vector{
 
   /// Splat [value] into all lanes of the vector.
   Vector3.all(double value) : this(value, value, value);
-  
+
   /// Copy of [other].
   Vector3.copy(Vector3 other) : storage = new Float32List(3) {
     setFrom(other);
@@ -178,10 +178,10 @@ class Vector3 implements Vector{
     if (l == 0.0) {
       return 0.0;
     }
-    l = 1.0 / l;
-    storage[0] *= l;
-    storage[1] *= l;
-    storage[2] *= l;
+    double rcp = 1.0 / l;
+    storage[0] *= rcp;
+    storage[1] *= rcp;
+    storage[2] *= rcp;
     return l;
   }
 

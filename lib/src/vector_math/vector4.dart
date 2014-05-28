@@ -41,7 +41,7 @@ class Vector4 implements Vector {
     result.w = Math.max(a.w, b.w);
   }
 
-  // Interpolate between [min] and [max] with the amount of [a] using a linear 
+  // Interpolate between [min] and [max] with the amount of [a] using a linear
   // interpolation and set the values to [result].
   static void mix(Vector4 min, Vector4 max, double a, Vector4 result) {
     result.x = min.x + a * (max.x - min.x);
@@ -195,11 +195,11 @@ class Vector4 implements Vector {
     if (l == 0.0) {
       return 0.0;
     }
-    l = 1.0 / l;
-    storage[0] *= l;
-    storage[1] *= l;
-    storage[2] *= l;
-    storage[3] *= l;
+    double rcp = 1.0 / l;
+    storage[0] *= rcp;
+    storage[1] *= rcp;
+    storage[2] *= rcp;
+    storage[3] *= rcp;
     return l;
   }
 
